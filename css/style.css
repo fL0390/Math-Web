@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f2f5;
+    min-height: 100vh;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.admin-nav {
+    text-align: right;
+    padding: 20px;
+}
+
+.gear-link {
+    text-decoration: none;
+    font-size: 24px;
+    color: #2c3e50;
+    transition: opacity 0.2s;
+}
+
+.gear-link:hover {
+    opacity: 0.7;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px);
+    padding: 20px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.math-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.math-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s;
+}
+
+.math-card:hover::before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    position: relative;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.math-card h2 {
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.math-card span {
+    font-size: 3rem;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Background images */
+.addition { background-image: url('https://example.com/addition-bg.jpg'); }
+.subtraction { background-image: url('https://example.com/subtraction-bg.jpg'); }
+.multiplication { background-image: url('https://example.com/multiplication-bg.jpg'); }
+.division { background-image: url('https://example.com/division-bg.jpg'); }
+
+@media (max-width: 1024px) {
+    .grid-container {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+    
+    .math-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+    
+    .title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .math-card {
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (max-width: 480px) {
+    .math-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .math-card span {
+        font-size: 2.5rem;
+    }
+}
